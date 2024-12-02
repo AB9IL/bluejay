@@ -1,4 +1,4 @@
-# bluefin and aurora
+# Bluejay-gnome is Bluefin and Aurora Linux for Content Creation
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/2503a44c1105456483517f793af75ee7)](https://app.codacy.com/gh/ublue-os/bluefin/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
