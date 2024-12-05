@@ -4,6 +4,13 @@
 
 [![GTS Images](https://github.com/ublue-os/bluefin/actions/workflows/build-image-gts.yml/badge.svg)](https://github.com/ublue-os/bluefin/actions/workflows/build-image-gts.yml)[![Stable Images](https://github.com/ublue-os/bluefin/actions/workflows/build-image-stable.yml/badge.svg)](https://github.com/ublue-os/bluefin/actions/workflows/build-image-stable.yml)[![Latest Images](https://github.com/ublue-os/bluefin/actions/workflows/build-image-latest.yml/badge.svg)](https://github.com/ublue-os/bluefin/actions/workflows/build-image-latest.yml)[![Beta Images](https://github.com/ublue-os/bluefin/actions/workflows/build-image-beta.yml/badge.svg)](https://github.com/ublue-os/bluefin/actions/workflows/build-image-beta.yml)
 
+## Bluejay
+
+![image](Bluejay_linux_2024-11-29.png)
+
+(under construction)
+**Focuses: code, prose images, video, analysis and computation in Python**
+
 ## Bluefin - [projectbluefin.io](https://projectbluefin.io)
 
 ![image](https://github.com/ublue-os/bluefin/assets/1264109/b093bdec-40dc-48d2-b8ff-fcf0df390e8c)
@@ -52,17 +59,3 @@ If you'd like to enroll this key prior to installation or rebase, download the k
 sudo mokutil --timeout -1
 sudo mokutil --import public_key.der
 ```
-
-## Repobeats
-
-![Alt](https://repobeats.axiom.co/api/embed/40b85b252bf6ea25eb90539d1adcea013ccae69a.svg "Repobeats analytics image")
-
-## Star History
-
-<a href="https://star-history.com/#ublue-os/bluefin&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ublue-os/bluefin&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ublue-os/bluefin&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=ublue-os/bluefin&type=Date" />
-  </picture>
-</a>
