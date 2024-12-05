@@ -59,3 +59,22 @@ If you'd like to enroll this key prior to installation or rebase, download the k
 sudo mokutil --timeout -1
 sudo mokutil --import public_key.der
 ```
+### Install by Rebasing!
+
+To rebase an existing Silverblue/Bluefin/Bazzite/Aurora installation to the latest Bluejay build: 
+
+*(Important note: the supported tags are `latest` and `stable`)*
+
+- First rebase to the desired image, to get the proper signing keys and policies installed:
+  ```
+  sudo bootc switch ghcr.io/AB9IL/bluejay:latest
+  ```
+- Reboot to complete the rebase:
+  ```
+  systemctl reboot
+  ```
+- Reboot again to complete the installation
+  ```
+  systemctl reboot
+  ```
+  
