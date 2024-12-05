@@ -8,8 +8,9 @@
 
 ![image](Bluejay_linux_2024-11-29.png)
 
-(under construction)
 **Focuses: code, prose images, video, analysis and computation in Python**
+
+(under construction)
 
 ## Bluefin - [projectbluefin.io](https://projectbluefin.io)
 
@@ -73,7 +74,6 @@ To rebase an existing Silverblue/Bluefin/Bazzite/Aurora installation to the late
   ```
   rpm-ostree cleanup -bm
   rpm-ostree rebase ostree-image-signed:docker://ghcr.io/AB9IL/bluejay:latest
-
   ```
   
 - Reboot to complete the rebase:
