@@ -69,6 +69,13 @@ To rebase an existing Silverblue/Bluefin/Bazzite/Aurora installation to the late
   ```
   sudo bootc switch ghcr.io/AB9IL/bluejay:latest
   ```
+- If rebasing from a system not yet with bootc, use rpm-ostree:
+  ```
+  rpm-ostree cleanup -bm
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/AB9IL/bluejay:latest
+
+  ```
+  
 - Reboot to complete the rebase:
   ```
   systemctl reboot
