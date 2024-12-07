@@ -8,7 +8,7 @@
 
 ![image](Bluejay_linux_2024-11-29.png)
 
-**Focuses: code, prose images, video, analysis and computation in Python**
+**Focuses: tools for editing media, writing code, crunching numbers, and doing analysis.**
 
 (under construction)
 
