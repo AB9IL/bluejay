@@ -1,4 +1,4 @@
-# Bluejay Linux is Bluefin and Aurora for Content Creation
+# Bluejay Linux is Bluefin Opinionated for Content Creation
 
 ## Bluejay
 
