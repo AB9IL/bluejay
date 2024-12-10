@@ -1,8 +1,14 @@
+# Bluejay Linux is Bluefin and Aurora for Content Creation
+
+## Bluejay
+
+![image](Bluejay_linux_2024-11-29.png)
+
+**Focuses: tools for editing media, writing code, crunching numbers, and doing analysis.**
+
+(under construction)
+
 ## Bluefin - [projectbluefin.io](https://projectbluefin.io)
-
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2503a44c1105456483517f793af75ee7)](https://app.codacy.com/gh/ublue-os/bluefin/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-
-[![GTS Images](https://github.com/ublue-os/bluefin/actions/workflows/build-image-gts.yml/badge.svg)](https://github.com/ublue-os/bluefin/actions/workflows/build-image-gts.yml)[![Stable Images](https://github.com/ublue-os/bluefin/actions/workflows/build-image-stable.yml/badge.svg)](https://github.com/ublue-os/bluefin/actions/workflows/build-image-stable.yml)[![Latest Images](https://github.com/ublue-os/bluefin/actions/workflows/build-image-latest.yml/badge.svg)](https://github.com/ublue-os/bluefin/actions/workflows/build-image-latest.yml)[![Beta Images](https://github.com/ublue-os/bluefin/actions/workflows/build-image-beta.yml/badge.svg)](https://github.com/ublue-os/bluefin/actions/workflows/build-image-beta.yml)
 
 ![image](https://github.com/ublue-os/bluefin/assets/1264109/b093bdec-40dc-48d2-b8ff-fcf0df390e8c)
 
@@ -39,16 +45,28 @@ sudo mokutil --timeout -1
 sudo mokutil --import public_key.der
 ```
 
-## Repobeats
+### Install by Rebasing!
 
-![Alt](https://repobeats.axiom.co/api/embed/40b85b252bf6ea25eb90539d1adcea013ccae69a.svg "Repobeats analytics image")
+To rebase an existing Silverblue/Bluefin/Bazzite/Aurora installation to the latest Bluejay build: 
 
-## Star History
+*(Important note: the supported tags are `latest` and `stable`)*
 
-<a href="https://star-history.com/#ublue-os/bluefin&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ublue-os/bluefin&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ublue-os/bluefin&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=ublue-os/bluefin&type=Date" />
-  </picture>
-</a>
+- First rebase to the desired image, to get the proper signing keys and policies installed:
+  ```
+  sudo bootc switch ghcr.io/AB9IL/bluejay:latest
+  ```
+- If rebasing from a system not yet with bootc, use rpm-ostree:
+  ```
+  rpm-ostree cleanup -bm
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/AB9IL/bluejay:latest
+  ```
+  
+- Reboot to complete the rebase:
+  ```
+  systemctl reboot
+  ```
+- Reboot again to complete the installation
+  ```
+  systemctl reboot
+  ```
+  
