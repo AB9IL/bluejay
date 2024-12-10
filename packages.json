@@ -183,6 +183,7 @@
 				"firefox-langpacks",
 				"firefox",
 				"nano",
+				"nano-default-editor",
 				"podman-docker",
 				"ublue-os-update-services"
 			],
