@@ -2,8 +2,20 @@
 
 set -x
 
-dnf install -y gparted
-dnf --enablerepo="terra" install -y readymade-nightly bluefin-readymade-config
+# no DNF5, most likely c10s
+if [ -x /usr/bin/dnf5 ] ; then
+  sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terrael10' terra-release 
+else
+  dnf install -y gparted
+  dnf --enablerepo="terra" install -y readymade-nightly
+fi
+
+# FIXME: move to `dnf install` once (https://github.com/terrapkg/packages/pull/4623) is merged
+pushd $(mktemp -d)
+dnf copr enable -y ublue-os/packages
+dnf download bluefin-readymade-config
+rpm -i --force *.rpm
+popd
 
 IMAGE_INFO="$(cat /usr/share/ublue-os/image-info.json)"
 IMAGE_TAG="$(jq -c -r '."image-tag"' <<< $IMAGE_INFO)"
@@ -36,7 +48,7 @@ icon = "explore-symbolic"
 [[bento]]
 title = "page-installation-help"
 desc = "page-installation-help-desc"
-link = "https://universal-blue.discourse.group/"
+link = "https://universal-blue.discourse.group/c/bluefin/6"
 icon = "chat-symbolic"
 
 [[bento]]
