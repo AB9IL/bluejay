@@ -38,6 +38,7 @@
 				"ibus-mozc",
 				"ifuse",
 				"input-remapper",
+				"iwd",
 				"jetbrains-mono-fonts-all",
 				"krb5-workstation",
 				"libgda",
@@ -51,7 +52,6 @@
 				"mesa-libGLU",
 				"mozc",
 				"nautilus-gsconnect",
-				"nautilus-open-any-terminal",
 				"nerd-fonts",
 				"oddjob-mkhomedir",
 				"opendyslexic-fonts",
@@ -81,6 +81,7 @@
 				"ublue-polkit-rules",
 				"ublue-setup-services",
 				"uld",
+				"usbip",
 				"usbmuxd",
 				"wireguard-tools",
 				"wl-clipboard",
@@ -188,21 +189,25 @@
 			"dx": []
 		},
 		"exclude": {
-			"all": [],
+			"all": [
+
+			],
 			"dx": []
 		}
 	},
 	"42": {
 		"include": {
 			"all": [
-        "bazaar",
-        "google-noto-fonts-all",
-        "uupd"
+        			"bazaar",
+        			"google-noto-fonts-all",
+        			"uupd"
       ],
 			"dx": []
 		},
 		"exclude": {
-			"all": [],
+			"all": [
+  				"gnome-software"		
+			],
 			"dx": []
 		}
 	}

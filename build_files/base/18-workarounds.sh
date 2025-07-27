@@ -20,11 +20,23 @@ set -eoux pipefail
 # see https://bugzilla.redhat.com/show_bug.cgi?id=2365882
 dnf -y swap atheros-firmware atheros-firmware-20250311-1$(rpm -E %{dist})
 
+
+# Only downgrade for F42
+if [ "$FEDORA_MAJOR_VERSION" -eq "42" ]; then
+# Downgrade libdex to 0.9.1 because 0.10 makes bazaar crash under VMs and PCs with low specs
+dnf5 install -y libdex-0.9.1
+fi
+
 # Current bluefin systems have the bling.sh and bling.fish in their default locations
 mkdir -p /usr/share/ublue-os/bluefin-cli
 cp /usr/share/ublue-os/bling/* /usr/share/ublue-os/bluefin-cli
 
 # Try removing just docs (is it actually promblematic?)
 rm -rf /usr/share/doc/just/README.*.md
+
+# Workaround for Bazaar on NVIDIA systems
+if [[ -f /usr/share/applications/io.github.kolunmi.Bazaar.desktop ]] && jq -e '.["image-flavor"] | test("nvidia")' /usr/share/ublue-os/image-info.json >/dev/null; then
+  sed -i 's|^Exec=bazaar window --auto-service$|Exec=env GSK_RENDERER=opengl bazaar window --auto-service|' /usr/share/applications/io.github.kolunmi.Bazaar.desktop
+fi
 
 echo "::endgroup::"
